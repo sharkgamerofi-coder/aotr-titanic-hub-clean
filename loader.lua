@@ -1,5 +1,7 @@
--- AOTR Titanic Hub Clean (logger removed)
+-- AOTR Titanic Hub Clean (account logger removed)
 local base = "https://raw.githubusercontent.com/sharkgamerofi-coder/aotr-titanic-hub-clean/main/"
-local a = game:HttpGet(base .. "part1.lua")
-local b = game:HttpGet(base .. "part2.lua")
-loadstring(a .. b)()
+local chunks = {}
+for i = 1, 4 do
+	table.insert(chunks, game:HttpGet(base .. "p" .. i .. ".lua"))
+end
+loadstring(table.concat(chunks))()
